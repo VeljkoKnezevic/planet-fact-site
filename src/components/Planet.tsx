@@ -11,14 +11,20 @@ const Planet = ({ data }: PlanetProps) => {
   const { width } = useWindowDimensions();
 
   return (
-    <div>
+    <div className="planet">
       {width && width < 768 ? (
         <>
-          <button type="button">Overview</button>
-          <button type="button">Structure</button>
-          <button type="button">Surface</button>
+          <div className="planet__buttons">
+            <button type="button">Overview</button>
+            <button type="button">Structure</button>
+            <button type="button">Surface</button>
+          </div>
 
-          <img src={data.images.planet} alt={data.name} />
+          <img
+            className="planet__image"
+            src={data.images.planet}
+            alt={data.name}
+          />
 
           <Content data={data} />
           <Cards data={data} />
@@ -27,7 +33,6 @@ const Planet = ({ data }: PlanetProps) => {
         <>
           <img src={data.images.planet} alt={data.name} />
           <Content data={data} />
-
           <Cards data={data} />
         </>
       )}

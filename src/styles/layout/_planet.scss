@@ -1,0 +1,8 @@
+@use "../utils/" as u;
+
+.planet {
+  &__buttons {
+    padding: u.rem(20) u.rem(24);
+    border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
