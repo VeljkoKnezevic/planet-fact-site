@@ -15,14 +15,13 @@ const App = () => {
         const json: DataTypes = await response.json();
         setData(json);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.log(err);
       }
     };
 
     fetchData();
   }, []);
-
-  console.log(data);
 
   return (
     <BrowserRouter>
