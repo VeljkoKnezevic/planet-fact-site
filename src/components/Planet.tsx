@@ -13,29 +13,18 @@ const Planet = ({ data }: PlanetProps) => {
   return (
     <div className="planet">
       {width && width < 768 ? (
-        <>
-          <div className="planet__buttons">
-            <button type="button">Overview</button>
-            <button type="button">Structure</button>
-            <button type="button">Surface</button>
-          </div>
-
-          <img
-            className="planet__image"
-            src={data.images.planet}
-            alt={data.name}
-          />
-
-          <Content data={data} />
-          <Cards data={data} />
-        </>
+        <div className="planet__buttons">
+          <button type="button">Overview</button>
+          <button type="button">Structure</button>
+          <button type="button">Surface</button>
+        </div>
       ) : (
-        <>
-          <img src={data.images.planet} alt={data.name} />
-          <Content data={data} />
-          <Cards data={data} />
-        </>
+        ""
       )}
+      <img className="planet__image" src={data.images.planet} alt={data.name} />
+
+      <Content data={data} />
+      <Cards data={data} />
     </div>
   );
 };

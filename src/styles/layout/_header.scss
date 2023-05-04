@@ -7,6 +7,12 @@
   padding: u.rem(16) u.rem(24);
   border-block-end: 1px solid rgba(255, 255, 255, 0.2);
 
+  @include u.breakpoint(medium) {
+    display: flex;
+    flex-direction: column;
+    padding: u.rem(32) u.rem(51) u.rem(27);
+  }
+
   &__heading {
     font-family: u.$antonio-font;
     font-weight: 400;
@@ -25,5 +31,29 @@
     height: u.rem(17);
     background-color: transparent;
     border: none;
+  }
+
+  &__nav {
+    width: 100%;
+    opacity: 0.75;
+
+    &__list {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      margin-block-start: u.rem(39);
+
+      a {
+        display: block;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 25px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
   }
 }

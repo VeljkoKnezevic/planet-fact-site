@@ -1,6 +1,7 @@
 @use "../utils/" as u;
 
 .planet {
+  // Buttons for mobile sizing
   &__buttons {
     width: 100%;
     display: flex;
@@ -46,29 +47,56 @@
     height: u.rem(111);
     margin-block-start: u.rem(95);
     margin-inline: auto;
-  }
 
-  &__content {
-    margin-block-start: u.rem(98);
-    margin-inline: u.rem(24);
-    text-align: center;
+    @include u.breakpoint(medium) {
+      width: u.rem(184);
+      height: u.rem(184);
+      margin-block-start: u.rem(146);
+    }
   }
 
   .content {
+    margin-block-start: u.rem(98);
+    margin-inline: u.rem(24);
+    text-align: center;
+
+    @include u.breakpoint(medium) {
+      margin-inline: u.rem(40);
+      text-align: start;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__wrapper {
+      @include u.breakpoint(medium) {
+        width: u.rem(339);
+      }
+    }
+
     &__heading {
       font-weight: 400;
       font-size: u.rem(40);
       line-height: u.rem(52);
       text-transform: uppercase;
       color: var(--white);
+
+      @include u.breakpoint(medium) {
+        font-size: u.rem(48);
+        line-height: u.rem(62);
+      }
     }
 
     &__para {
       font-weight: 400;
-      font-size: 11px;
-      line-height: 22px;
+      font-size: u.rem(11);
+      line-height: u.rem(22);
       color: var(--white);
       margin-block-start: u.rem(16);
+
+      @include u.breakpoint(medium) {
+        margin-block-start: u.rem(24);
+      }
     }
 
     &__source {
@@ -78,6 +106,10 @@
       margin-block-start: u.rem(32);
       font-size: u.rem(12);
       line-height: u.rem(25);
+
+      @include u.breakpoint(medium) {
+        justify-content: flex-start;
+      }
 
       &__text {
         font-weight: 400;
@@ -94,21 +126,66 @@
         margin-inline-start: u.rem(4);
       }
     }
+
+    // Buttons for width above tablet sizing
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: u.rem(16);
+
+      button {
+        font-family: "Spartan";
+        font-style: normal;
+        font-weight: 700;
+        font-size: u.rem(9);
+        line-height: u.rem(25);
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        letter-spacing: u.rem(1.92857);
+        text-transform: uppercase;
+        text-align: left;
+        color: var(--white);
+        padding: u.rem(8) 0 u.rem(7) u.rem(20);
+        width: u.rem(281);
+
+        span {
+          opacity: 0.5;
+          margin-inline-end: u.rem(17);
+        }
+      }
+    }
   }
 
   .cards {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     margin-block-start: u.rem(28);
     margin-inline: u.rem(24);
     padding-block-end: u.rem(47);
     gap: u.rem(8);
 
+    @include u.breakpoint(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: u.rem(11);
+      margin-block-start: u.rem(27);
+      margin-inline: u.rem(40);
+      padding-block-end: u.rem(36);
+    }
+
     .card {
-      padding: u.rem(9) u.rem(24) u.rem(13);
+      padding: u.rem(10) u.rem(24);
       display: flex;
       justify-content: space-between;
       align-items: center;
       border: 1px solid rgba(255, 255, 255, 0.2);
+
+      @include u.breakpoint(medium) {
+        flex-direction: column;
+        min-width: u.rem(164);
+        padding: u.rem(16) 0 u.rem(19) u.rem(15);
+        align-items: start;
+      }
 
       &__name {
         font-weight: 700;
@@ -123,11 +200,16 @@
         font-weight: 400;
         font-size: u.rem(20);
         line-height: u.rem(26);
-
         letter-spacing: u.rem(-0.75);
         text-transform: uppercase;
-
         color: #ffffff;
+
+        @include u.breakpoint(medium) {
+          margin-block-start: u.rem(6);
+          font-size: u.rem(24);
+          line-height: u.rem(31);
+          letter-spacing: u.rem(-0.9);
+        }
       }
     }
   }

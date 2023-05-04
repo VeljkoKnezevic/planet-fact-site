@@ -15,29 +15,29 @@ const Header = () => {
         ></button>
       ) : (
         <nav className="header__nav">
-          <ul className="nav__list">
-            <li className="nav__list__item">
+          <ul className="header__nav__list">
+            <li>
               <Link to="/">Mercury</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="venus">Venus</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="earth">Earth</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="mars">Mars</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="jupiter">Jupiter</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="saturn">Saturn</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="uranus">Uranus</Link>
             </li>
-            <li className="nav__list__item">
+            <li>
               <Link to="neptune">Nepture</Link>
             </li>
           </ul>

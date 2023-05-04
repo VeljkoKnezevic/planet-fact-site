@@ -7,7 +7,7 @@ type ContentType = {
 const Content = ({ data }: ContentType) => {
   const { width } = useWindowDimensions();
   return (
-    <section className="planet__content content">
+    <section className="content">
       <div className="content__wrapper">
         <h2 className="content__heading">{data.name}</h2>
         <p className="content__para">{data.overview.content}</p>
