@@ -199,6 +199,11 @@
         padding: u.rem(8) 0 u.rem(7) u.rem(20);
         width: u.rem(281);
 
+        &:hover {
+          background: rgba(216, 216, 216, 0.2);
+          cursor: pointer;
+        }
+
         @include u.breakpoint(xlarge) {
           padding: u.rem(12) 0 u.rem(11) u.rem(28);
         }
@@ -239,12 +244,12 @@
     }
 
     @include u.breakpoint(xlarge) {
+      justify-content: center;
       margin-block-start: u.rem(87);
       margin-inline: u.rem(165);
       gap: u.rem(30);
       padding-block-end: u.rem(56);
       max-width: u.rem(1800);
-      justify-content: center;
     }
 
     .card {
