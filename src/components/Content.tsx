@@ -7,41 +7,37 @@ type ContentType = {
 const Content = ({ data }: ContentType) => {
   const { width } = useWindowDimensions();
   return (
-    <section className="content">
-      {width && width < 768 ? (
-        <>
-          <h2>{data.name}</h2>
-          <p>{data.overview.content}</p>
+    <section className="planet__content content">
+      <div className="content__wrapper">
+        <h2 className="content__heading">{data.name}</h2>
+        <p className="content__para">{data.overview.content}</p>
+        <div className="content__source">
+          <span className="content__source__text">Source:</span>
+          <a className="content__source__link" href={data.overview.source}>
+            Wikipedia
+          </a>
+          <img
+            className="content__source__image"
+            src="/assets/icon-source.svg"
+            alt="Source icon"
+          />
+        </div>
+      </div>
 
-          <div>
-            <span>Source:</span>
-            <a href={data.overview.source}>Wikipedia</a>
-            <img src="/assets/icon-source.svg" alt="Source icon" />
-          </div>
-        </>
+      {width && width >= 768 ? (
+        <div className="content__buttons">
+          <button type="button">
+            <span>01</span>Overview
+          </button>
+          <button type="button">
+            <span>02</span>Internal Structure
+          </button>
+          <button type="button">
+            <span>03</span>Surface Geology
+          </button>
+        </div>
       ) : (
-        <>
-          <div className="content__wrapper">
-            <h2>{data.name}</h2>
-            <p>{data.overview.content}</p>
-            <div>
-              <span>Source:</span>
-              <a href={data.overview.source}>Wikipedia</a>
-              <img src="/assets/icon-source.svg" alt="Source icon" />
-            </div>
-          </div>
-          <div className="content__buttons">
-            <button type="button">
-              <span>01</span>Overview
-            </button>
-            <button type="button">
-              <span>02</span>Internal Structure
-            </button>
-            <button type="button">
-              <span>03</span>Surface Geology
-            </button>
-          </div>
-        </>
+        ""
       )}
     </section>
   );

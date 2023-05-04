@@ -9,19 +9,19 @@ const Cards = ({ data }: CardsTypes) => {
     <section className="cards">
       <article className="card">
         <p className="card__name">Rotation Time</p>
-        <p className="card__data">{data.rotation}</p>
+        <h3 className="card__data">{data.rotation}</h3>
       </article>
       <article className="card">
         <p className="card__name">Revolution Time</p>
-        <p className="card__data">{data.revolution}</p>
+        <h3 className="card__data">{data.revolution}</h3>
       </article>
       <article className="card">
         <p className="card__name">Radius</p>
-        <p className="card__data">{data.radius}</p>
+        <h3 className="card__data">{data.radius}</h3>
       </article>
       <article className="card">
         <p className="card__name">Average Temp.</p>
-        <p className="card__data">{data.temperature}</p>
+        <h3 className="card__data">{data.temperature}</h3>
       </article>
     </section>
   );

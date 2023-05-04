@@ -1,2 +1,7 @@
 $antonio-font: "Antonio", sans-serif;
-$spartan-font: "League Spartan", sans-serif;
+
+@font-face {
+  font-weight: 400;
+  font-family: spartan;
+  src: url(/fonts/spartan/Spartan-Regular.ttf);
+}

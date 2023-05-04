@@ -29,14 +29,24 @@ const App = () => {
       {data && (
         <main>
           <Routes>
-            <Route path="/" element={<Planet data={data[0]} />} />
-            <Route path="venus" element={<Planet data={data[1]} />} />
-            <Route path="earth" element={<Planet data={data[2]} />} />
-            <Route path="mars" element={<Planet data={data[3]} />} />
-            <Route path="jupiter" element={<Planet data={data[4]} />} />
-            <Route path="saturn" element={<Planet data={data[5]} />} />
-            <Route path="uranus" element={<Planet data={data[6]} />} />
-            <Route path="neptune" element={<Planet data={data[7]} />} />
+            {data.map((planet) => {
+              if (planet.name === "Mercury") {
+                return (
+                  <Route
+                    key={planet.name}
+                    path="/"
+                    element={<Planet data={data[0]} />}
+                  />
+                );
+              }
+              return (
+                <Route
+                  key={planet.name}
+                  path={planet.name.toLowerCase()}
+                  element={<Planet data={planet} />}
+                />
+              );
+            })}
           </Routes>
         </main>
       )}
