@@ -1,8 +1,8 @@
 @use "../utils/" as u;
 
 .planet {
-  // Buttons for mobile sizing
   &__buttons {
+    // Buttons for mobile sizing
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -42,6 +42,16 @@
     }
   }
 
+  &__container {
+    @include u.breakpoint(xlarge) {
+      display: flex;
+      justify-content: center;
+      justify-content: space-between;
+      max-width: u.rem(1800);
+      margin-inline: auto;
+    }
+  }
+
   &__image {
     width: u.rem(111);
     height: u.rem(111);
@@ -52,6 +62,14 @@
       width: u.rem(184);
       height: u.rem(184);
       margin-block-start: u.rem(146);
+    }
+
+    @include u.breakpoint(xlarge) {
+      width: u.rem(290);
+      height: u.rem(290);
+      margin-inline-end: u.rem(300);
+      margin-inline-start: u.rem(335);
+      margin-block-start: u.rem(242);
     }
   }
 
@@ -68,9 +86,20 @@
       align-items: center;
     }
 
+    @include u.breakpoint(xlarge) {
+      flex-direction: column;
+      margin-block-start: u.rem(126);
+      margin-inline-start: 0;
+      margin-inline-end: u.rem(165);
+    }
+
     &__wrapper {
       @include u.breakpoint(medium) {
         width: u.rem(339);
+      }
+
+      @include u.breakpoint(xlarge) {
+        width: u.rem(350);
       }
     }
 
@@ -85,6 +114,11 @@
         font-size: u.rem(48);
         line-height: u.rem(62);
       }
+
+      @include u.breakpoint(xlarge) {
+        font-size: u.rem(80);
+        line-height: u.rem(104);
+      }
     }
 
     &__para {
@@ -96,6 +130,12 @@
 
       @include u.breakpoint(medium) {
         margin-block-start: u.rem(24);
+      }
+
+      @include u.breakpoint(xlarge) {
+        font-size: u.rem(14);
+        line-height: u.rem(25);
+        margin-block-start: u.rem(23);
       }
     }
 
@@ -109,6 +149,12 @@
 
       @include u.breakpoint(medium) {
         justify-content: flex-start;
+      }
+
+      @include u.breakpoint(xlarge) {
+        font-size: u.rem(14);
+        line-height: u.rem(25);
+        margin-block-start: u.rem(24);
       }
 
       &__text {
@@ -133,6 +179,11 @@
       flex-direction: column;
       gap: u.rem(16);
 
+      @include u.breakpoint(xlarge) {
+        width: 100%;
+        margin-block-start: u.rem(39);
+      }
+
       button {
         font-family: "Spartan";
         font-style: normal;
@@ -148,9 +199,23 @@
         padding: u.rem(8) 0 u.rem(7) u.rem(20);
         width: u.rem(281);
 
+        @include u.breakpoint(xlarge) {
+          padding: u.rem(12) 0 u.rem(11) u.rem(28);
+        }
+
+        @include u.breakpoint(xlarge) {
+          width: 100%;
+          font-size: u.rem(12);
+          letter-spacing: u.rem(2.57143);
+        }
+
         span {
           opacity: 0.5;
           margin-inline-end: u.rem(17);
+
+          @include u.breakpoint(xlarge) {
+            margin-inline-end: u.rem(25);
+          }
         }
       }
     }
@@ -173,6 +238,15 @@
       padding-block-end: u.rem(36);
     }
 
+    @include u.breakpoint(xlarge) {
+      margin-block-start: u.rem(87);
+      margin-inline: u.rem(165);
+      gap: u.rem(30);
+      padding-block-end: u.rem(56);
+      max-width: u.rem(1800);
+      justify-content: center;
+    }
+
     .card {
       padding: u.rem(10) u.rem(24);
       display: flex;
@@ -187,6 +261,11 @@
         align-items: start;
       }
 
+      @include u.breakpoint(xlarge) {
+        min-width: u.rem(255);
+        padding: u.rem(20) 0 u.rem(27) u.rem(23);
+      }
+
       &__name {
         font-weight: 700;
         font-size: u.rem(8);
@@ -194,6 +273,11 @@
         letter-spacing: u.rem(0.727273);
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.5);
+
+        @include u.breakpoint(xlarge) {
+          font-size: u.rem(11);
+          line-height: u.rem(25);
+        }
       }
 
       &__data {
@@ -209,6 +293,13 @@
           font-size: u.rem(24);
           line-height: u.rem(31);
           letter-spacing: u.rem(-0.9);
+        }
+
+        @include u.breakpoint(xlarge) {
+          margin-block-start: u.rem(4);
+          font-size: u.rem(40);
+          line-height: u.rem(52);
+          letter-spacing: u.rem(-1.5);
         }
       }
     }

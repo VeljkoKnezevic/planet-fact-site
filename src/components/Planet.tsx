@@ -21,9 +21,14 @@ const Planet = ({ data }: PlanetProps) => {
       ) : (
         ""
       )}
-      <img className="planet__image" src={data.images.planet} alt={data.name} />
-
-      <Content data={data} />
+      <div className="planet__container">
+        <img
+          className="planet__image"
+          src={data.images.planet}
+          alt={data.name}
+        />
+        <Content data={data} />
+      </div>
       <Cards data={data} />
     </div>
   );
