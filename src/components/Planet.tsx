@@ -55,17 +55,27 @@ const Planet = ({ data }: PlanetProps) => {
       {width && width < 700 ? (
         <div className="planet__buttons">
           <button
-            className="selected"
+            className={`${data.name.toLowerCase()} selected`}
             onClick={handleClick}
             value="overview"
             type="button"
           >
             Overview
           </button>
-          <button onClick={handleClick} value="structure" type="button">
+          <button
+            className={`${data.name.toLowerCase()} `}
+            onClick={handleClick}
+            value="structure"
+            type="button"
+          >
             Structure
           </button>
-          <button onClick={handleClick} value="surface" type="button">
+          <button
+            className={`${data.name.toLowerCase()} `}
+            onClick={handleClick}
+            value="surface"
+            type="button"
+          >
             Surface
           </button>
         </div>

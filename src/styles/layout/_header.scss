@@ -69,6 +69,47 @@
         opacity: 0.75;
         position: relative;
 
+        &.mercury {
+          &::before {
+            background-color: var(--mercury);
+          }
+        }
+        &.venus {
+          &::before {
+            background-color: var(--venus);
+          }
+        }
+        &.earth {
+          &::before {
+            background-color: var(--earth);
+          }
+        }
+        &.mars {
+          &::before {
+            background-color: var(--mars);
+          }
+        }
+        &.jupiter {
+          &::before {
+            background-color: var(--jupiter);
+          }
+        }
+        &.saturn {
+          &::before {
+            background-color: var(--saturn);
+          }
+        }
+        &.uranus {
+          &::before {
+            background-color: var(--uranus);
+          }
+        }
+        &.neptune {
+          &::before {
+            background-color: var(--neptune);
+          }
+        }
+
         &:hover {
           cursor: pointer;
           opacity: 1;
@@ -79,7 +120,6 @@
             width: 100%;
             height: u.rem(4);
             top: -25px;
-            background-color: #419ebb;
           }
         }
       }

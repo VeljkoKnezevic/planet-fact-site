@@ -203,6 +203,33 @@
         margin-block-start: u.rem(39);
       }
 
+      .selected {
+        &.mercury {
+          background-color: var(--mercury);
+        }
+        &.venus {
+          background-color: var(--venus);
+        }
+        &.earth {
+          background-color: var(--earth);
+        }
+        &.mars {
+          background-color: var(--mars);
+        }
+        &.jupiter {
+          background-color: var(--jupiter);
+        }
+        &.saturn {
+          background-color: var(--saturn);
+        }
+        &.uranus {
+          background-color: var(--uranus);
+        }
+        &.neptune {
+          background-color: var(--neptune);
+        }
+      }
+
       button {
         font-family: "Spartan";
         font-style: normal;

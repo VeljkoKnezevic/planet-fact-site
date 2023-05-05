@@ -33,14 +33,24 @@ const Content = ({ data, handleClick }: ContentType) => {
             onClick={handleClick}
             value="overview"
             type="button"
-            className="selected"
+            className={`${data.name.toLowerCase()} selected`}
           >
             <span>01</span>Overview
           </button>
-          <button onClick={handleClick} value="structure" type="button">
+          <button
+            className={`${data.name.toLowerCase()}`}
+            onClick={handleClick}
+            value="structure"
+            type="button"
+          >
             <span>02</span>Internal Structure
           </button>
-          <button onClick={handleClick} value="geology" type="button">
+          <button
+            className={`${data.name.toLowerCase()}`}
+            onClick={handleClick}
+            value="geology"
+            type="button"
+          >
             <span>03</span>Surface Geology
           </button>
         </div>

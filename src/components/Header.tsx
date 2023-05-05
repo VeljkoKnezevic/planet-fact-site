@@ -15,31 +15,47 @@ const Header = () => {
           aria-label="open menu"
         ></button>
       ) : (
-        <nav className="header__nav">
+        <nav className={`header__nav `}>
           <ul className="header__nav__list">
             <li>
-              <Link to="/">Mercury</Link>
+              <Link className="mercury" to="/">
+                Mercury
+              </Link>
             </li>
             <li>
-              <Link to="venus">Venus</Link>
+              <Link className="venus" to="venus">
+                Venus
+              </Link>
             </li>
             <li>
-              <Link to="earth">Earth</Link>
+              <Link className="earth" to="earth">
+                Earth
+              </Link>
             </li>
             <li>
-              <Link to="mars">Mars</Link>
+              <Link className="mars" to="mars">
+                Mars
+              </Link>
             </li>
             <li>
-              <Link to="jupiter">Jupiter</Link>
+              <Link className="jupiter" to="jupiter">
+                Jupiter
+              </Link>
             </li>
             <li>
-              <Link to="saturn">Saturn</Link>
+              <Link className="saturn" to="saturn">
+                Saturn
+              </Link>
             </li>
             <li>
-              <Link to="uranus">Uranus</Link>
+              <Link className="uranus" to="uranus">
+                Uranus
+              </Link>
             </li>
             <li>
-              <Link to="neptune">Nepture</Link>
+              <Link className="neptune" to="neptune">
+                Nepture
+              </Link>
             </li>
           </ul>
         </nav>
