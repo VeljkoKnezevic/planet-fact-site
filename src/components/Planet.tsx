@@ -13,24 +13,34 @@ const Planet = ({ data }: PlanetProps) => {
   const { width } = useWindowDimensions();
   const location = useLocation();
 
-  const [image, setImage] = useState("");
-  const [showGeology, setShowGeology] = useState(false);
+  const [image, setImage] = useState<string>(data.images.planet);
+  const [showGeology, setShowGeology] = useState<boolean>(false);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const buttonValue = (e.target as HTMLButtonElement).value;
+    const buttonValue = e.currentTarget.value;
+    const buttons = e.currentTarget.parentElement?.children;
 
-    // Add a class to header and planet
+    // Removes the selected class from all elements
+    if (buttons) {
+      Array.from(buttons).forEach((button) => {
+        button.classList.remove("selected");
+      });
+    }
 
     // Change image that displays
+    // Adds the selected class for styling
     if (buttonValue === "overview") {
       setImage(data.images.planet);
       setShowGeology(false);
+      e.currentTarget.classList.add("selected");
     } else if (buttonValue === "structure") {
       setImage(data.images.internal);
       setShowGeology(false);
+      e.currentTarget.classList.add("selected");
     } else {
       setImage(data.images.planet);
       setShowGeology(true);
+      e.currentTarget.classList.add("selected");
     }
   };
 
@@ -44,7 +54,12 @@ const Planet = ({ data }: PlanetProps) => {
     <div className="planet">
       {width && width < 700 ? (
         <div className="planet__buttons">
-          <button onClick={handleClick} value="overview" type="button">
+          <button
+            className="selected"
+            onClick={handleClick}
+            value="overview"
+            type="button"
+          >
             Overview
           </button>
           <button onClick={handleClick} value="structure" type="button">
@@ -58,11 +73,7 @@ const Planet = ({ data }: PlanetProps) => {
         ""
       )}
       <div className="planet__container">
-        <img
-          className="planet__image"
-          src={image || data.images.planet}
-          alt={data.name}
-        />
+        <img className="planet__image" src={image} alt={data.name} />
         {showGeology && (
           <img
             className="planet__geology"

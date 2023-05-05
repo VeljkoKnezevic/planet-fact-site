@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <header className="header">
       <h1 className="header__heading">The Planets</h1>
+      {/* Depending on screen size render either hamburger menu or nav element */}
       {width && width < 700 ? (
         <button
           className="header__hamburger"

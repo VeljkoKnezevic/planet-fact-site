@@ -29,7 +29,12 @@ const Content = ({ data, handleClick }: ContentType) => {
       {/* Renders on large screens and uses handleClick from planet component */}
       {width && width >= 700 ? (
         <div className="content__buttons">
-          <button onClick={handleClick} value="overview" type="button">
+          <button
+            onClick={handleClick}
+            value="overview"
+            type="button"
+            className="selected"
+          >
             <span>01</span>Overview
           </button>
           <button onClick={handleClick} value="structure" type="button">
