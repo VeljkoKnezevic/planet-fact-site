@@ -47,8 +47,9 @@
       display: flex;
       justify-content: center;
       justify-content: space-between;
-      max-width: u.rem(1800);
+      max-width: u.rem(1440);
       margin-inline: auto;
+      position: relative;
     }
   }
 
@@ -70,6 +71,24 @@
       margin-inline-end: u.rem(300);
       margin-inline-start: u.rem(335);
       margin-block-start: u.rem(242);
+    }
+  }
+
+  &__geology {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-block-start: u.rem(-30);
+    width: u.rem(60);
+
+    @include u.breakpoint(medium) {
+      width: u.rem(100);
+    }
+
+    @include u.breakpoint(xlarge) {
+      width: u.rem(163);
+      bottom: 0;
+      left: 33.5%;
     }
   }
 
@@ -246,10 +265,11 @@
     @include u.breakpoint(xlarge) {
       justify-content: center;
       margin-block-start: u.rem(87);
-      margin-inline: u.rem(165);
+      padding-inline: u.rem(165);
       gap: u.rem(30);
       padding-block-end: u.rem(56);
-      max-width: u.rem(1800);
+      max-width: u.rem(1440);
+      margin-inline: auto;
     }
 
     .card {

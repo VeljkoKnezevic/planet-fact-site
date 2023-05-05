@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="header">
       <h1 className="header__heading">The Planets</h1>
-      {width && width < 768 ? (
+      {width && width < 700 ? (
         <button
           className="header__hamburger"
           type="button"

@@ -3,9 +3,11 @@ import useWindowDimensions from "../hooks/useWindowDimesions";
 
 type ContentType = {
   data: DataType;
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
-const Content = ({ data }: ContentType) => {
+const Content = ({ data, handleClick }: ContentType) => {
   const { width } = useWindowDimensions();
+
   return (
     <section className="content">
       <div className="content__wrapper">
@@ -24,15 +26,16 @@ const Content = ({ data }: ContentType) => {
         </div>
       </div>
 
-      {width && width >= 768 ? (
+      {/* Renders on large screens and uses handleClick from planet component */}
+      {width && width >= 700 ? (
         <div className="content__buttons">
-          <button type="button">
+          <button onClick={handleClick} value="overview" type="button">
             <span>01</span>Overview
           </button>
-          <button type="button">
+          <button onClick={handleClick} value="structure" type="button">
             <span>02</span>Internal Structure
           </button>
-          <button type="button">
+          <button onClick={handleClick} value="geology" type="button">
             <span>03</span>Surface Geology
           </button>
         </div>
