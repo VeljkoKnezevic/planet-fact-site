@@ -61,13 +61,14 @@
         display: flex;
         flex-direction: column;
         font-weight: 700;
-        font-size: 11px;
-        line-height: 25px;
-        letter-spacing: 1px;
+        font-size: u.rem(11);
+        line-height: u.rem(25);
+        letter-spacing: u.rem(1);
         text-transform: uppercase;
         color: #ffffff;
         opacity: 0.75;
         position: relative;
+        user-select: none;
 
         &.mercury {
           &::before {
@@ -119,7 +120,7 @@
             position: absolute;
             width: 100%;
             height: u.rem(4);
-            top: -25px;
+            top: u.rem(-25);
           }
         }
       }

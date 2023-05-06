@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import { SetStateAction, useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimesions";
 
-const Header = () => {
+type HeaderProps = {
+  open: boolean;
+  setOpen: React.Dispatch<SetStateAction<boolean>>;
+};
+
+const Header = ({ open, setOpen }: HeaderProps) => {
   const { width } = useWindowDimensions();
 
   return (
@@ -13,6 +19,7 @@ const Header = () => {
           className="header__hamburger"
           type="button"
           aria-label="open menu"
+          onClick={() => setOpen(!open)}
         ></button>
       ) : (
         <nav className={`header__nav `}>

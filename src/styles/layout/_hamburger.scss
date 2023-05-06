@@ -1,0 +1,85 @@
+@use "../utils/" as u;
+
+.hamburger {
+  &__list {
+    padding: 0;
+    margin: 0;
+    padding: u.rem(24) u.rem(32) u.rem(47) u.rem(24);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-block: u.rem(20);
+    border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__text {
+    font-family: SpartanBold;
+    display: block;
+    font-size: u.rem(15);
+    line-height: u.rem(25);
+    text-align: center;
+    letter-spacing: u.rem(1.36364);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-inline-start: u.rem(25);
+    text-decoration: none;
+  }
+
+  &__circle {
+    width: u.rem(20);
+    height: u.rem(20);
+    border-radius: 50%;
+
+    &.mercury {
+      background-color: #def4fc;
+    }
+
+    &.venus {
+      background-color: #f7cc7f;
+    }
+
+    &.earth {
+      background-color: #545bfe;
+    }
+
+    &.mars {
+      background-color: #ff6a45;
+    }
+
+    &.jupiter {
+      background-color: #ecad7a;
+    }
+
+    &.saturn {
+      background-color: #fccb6b;
+    }
+
+    &.uranus {
+      background-color: #65f0d5;
+    }
+
+    &.neptune {
+      background-color: #497efa;
+    }
+  }
+
+  &__image {
+    margin-inline-start: auto;
+  }
+}

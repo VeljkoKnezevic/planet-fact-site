@@ -3,6 +3,7 @@
 .planet {
   &__buttons {
     // Buttons for mobile sizing
+    // Styling for buttons on larger screens are in content file
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -11,7 +12,7 @@
     border-block-end: 1px solid rgba(255, 255, 255, 0.2);
 
     button {
-      font-family: spartan;
+      font-family: SpartanBold;
       font-weight: 700;
       font-size: u.rem(9);
       line-height: u.rem(10);
@@ -27,15 +28,54 @@
       position: relative;
       padding: 0;
 
-      // Prebaciti u react
-      &:focus {
+      &.mercury {
+        &::after {
+          background-color: var(--mercury);
+        }
+      }
+      &.venus {
+        &::after {
+          background-color: var(--venus);
+        }
+      }
+      &.earth {
+        &::after {
+          background-color: var(--earth);
+        }
+      }
+      &.mars {
+        &::after {
+          background-color: var(--mars);
+        }
+      }
+      &.jupiter {
+        &::after {
+          background-color: var(--jupiter);
+        }
+      }
+      &.saturn {
+        &::after {
+          background-color: var(--saturn);
+        }
+      }
+      &.uranus {
+        &::after {
+          background-color: var(--uranus);
+        }
+      }
+      &.neptune {
+        &::after {
+          background-color: var(--neptune);
+        }
+      }
+
+      &.selected {
         opacity: 1;
         &::after {
           content: "";
           position: absolute;
           width: 100%;
           height: 4px;
-          background-color: #419ebb;
           bottom: -20px;
         }
       }
@@ -89,271 +129,6 @@
       width: u.rem(163);
       bottom: 0;
       left: 33.5%;
-    }
-  }
-
-  .content {
-    margin-block-start: u.rem(98);
-    margin-inline: u.rem(24);
-    text-align: center;
-
-    @include u.breakpoint(medium) {
-      margin-inline: u.rem(40);
-      text-align: start;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    @include u.breakpoint(xlarge) {
-      flex-direction: column;
-      margin-block-start: u.rem(126);
-      margin-inline-start: 0;
-      margin-inline-end: u.rem(165);
-    }
-
-    &__wrapper {
-      @include u.breakpoint(medium) {
-        width: u.rem(339);
-      }
-
-      @include u.breakpoint(xlarge) {
-        width: u.rem(350);
-      }
-    }
-
-    &__heading {
-      font-weight: 400;
-      font-size: u.rem(40);
-      line-height: u.rem(52);
-      text-transform: uppercase;
-      color: var(--white);
-
-      @include u.breakpoint(medium) {
-        font-size: u.rem(48);
-        line-height: u.rem(62);
-      }
-
-      @include u.breakpoint(xlarge) {
-        font-size: u.rem(80);
-        line-height: u.rem(104);
-      }
-    }
-
-    &__para {
-      font-weight: 400;
-      font-size: u.rem(11);
-      line-height: u.rem(22);
-      color: var(--white);
-      margin-block-start: u.rem(16);
-
-      @include u.breakpoint(medium) {
-        margin-block-start: u.rem(24);
-      }
-
-      @include u.breakpoint(xlarge) {
-        font-size: u.rem(14);
-        line-height: u.rem(25);
-        margin-block-start: u.rem(23);
-      }
-    }
-
-    &__source {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-block-start: u.rem(32);
-      font-size: u.rem(12);
-      line-height: u.rem(25);
-
-      @include u.breakpoint(medium) {
-        justify-content: flex-start;
-      }
-
-      @include u.breakpoint(xlarge) {
-        font-size: u.rem(14);
-        line-height: u.rem(25);
-        margin-block-start: u.rem(24);
-      }
-
-      &__text {
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      &__link {
-        color: rgba(255, 255, 255, 0.5);
-        font-weight: 700;
-        text-decoration-line: underline;
-      }
-
-      &__image {
-        margin-inline-start: u.rem(4);
-      }
-    }
-
-    // Buttons for width above tablet sizing
-    &__buttons {
-      display: flex;
-      flex-direction: column;
-      gap: u.rem(16);
-
-      @include u.breakpoint(xlarge) {
-        width: 100%;
-        margin-block-start: u.rem(39);
-      }
-
-      .selected {
-        &.mercury {
-          background-color: var(--mercury);
-        }
-        &.venus {
-          background-color: var(--venus);
-        }
-        &.earth {
-          background-color: var(--earth);
-        }
-        &.mars {
-          background-color: var(--mars);
-        }
-        &.jupiter {
-          background-color: var(--jupiter);
-        }
-        &.saturn {
-          background-color: var(--saturn);
-        }
-        &.uranus {
-          background-color: var(--uranus);
-        }
-        &.neptune {
-          background-color: var(--neptune);
-        }
-      }
-
-      button {
-        font-family: "Spartan";
-        font-style: normal;
-        font-weight: 700;
-        font-size: u.rem(9);
-        line-height: u.rem(25);
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        letter-spacing: u.rem(1.92857);
-        text-transform: uppercase;
-        text-align: left;
-        color: var(--white);
-        padding: u.rem(8) 0 u.rem(7) u.rem(20);
-        width: u.rem(281);
-
-        &:hover {
-          background: rgba(216, 216, 216, 0.2);
-          cursor: pointer;
-        }
-
-        @include u.breakpoint(xlarge) {
-          padding: u.rem(12) 0 u.rem(11) u.rem(28);
-        }
-
-        @include u.breakpoint(xlarge) {
-          width: 100%;
-          font-size: u.rem(12);
-          letter-spacing: u.rem(2.57143);
-        }
-
-        span {
-          opacity: 0.5;
-          margin-inline-end: u.rem(17);
-
-          @include u.breakpoint(xlarge) {
-            margin-inline-end: u.rem(25);
-          }
-        }
-      }
-    }
-  }
-
-  .cards {
-    display: flex;
-    flex-direction: column;
-    margin-block-start: u.rem(28);
-    margin-inline: u.rem(24);
-    padding-block-end: u.rem(47);
-    gap: u.rem(8);
-
-    @include u.breakpoint(medium) {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: u.rem(11);
-      margin-block-start: u.rem(27);
-      margin-inline: u.rem(40);
-      padding-block-end: u.rem(36);
-    }
-
-    @include u.breakpoint(xlarge) {
-      justify-content: center;
-      margin-block-start: u.rem(87);
-      padding-inline: u.rem(165);
-      gap: u.rem(30);
-      padding-block-end: u.rem(56);
-      max-width: u.rem(1440);
-      margin-inline: auto;
-    }
-
-    .card {
-      padding: u.rem(10) u.rem(24);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-
-      @include u.breakpoint(medium) {
-        flex-direction: column;
-        min-width: u.rem(164);
-        padding: u.rem(16) 0 u.rem(19) u.rem(15);
-        align-items: start;
-      }
-
-      @include u.breakpoint(xlarge) {
-        min-width: u.rem(255);
-        padding: u.rem(20) 0 u.rem(27) u.rem(23);
-      }
-
-      &__name {
-        font-weight: 700;
-        font-size: u.rem(8);
-        line-height: u.rem(16);
-        letter-spacing: u.rem(0.727273);
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.5);
-
-        @include u.breakpoint(xlarge) {
-          font-size: u.rem(11);
-          line-height: u.rem(25);
-        }
-      }
-
-      &__data {
-        font-weight: 400;
-        font-size: u.rem(20);
-        line-height: u.rem(26);
-        letter-spacing: u.rem(-0.75);
-        text-transform: uppercase;
-        color: #ffffff;
-
-        @include u.breakpoint(medium) {
-          margin-block-start: u.rem(6);
-          font-size: u.rem(24);
-          line-height: u.rem(31);
-          letter-spacing: u.rem(-0.9);
-        }
-
-        @include u.breakpoint(xlarge) {
-          margin-block-start: u.rem(4);
-          font-size: u.rem(40);
-          line-height: u.rem(52);
-          letter-spacing: u.rem(-1.5);
-        }
-      }
     }
   }
 }

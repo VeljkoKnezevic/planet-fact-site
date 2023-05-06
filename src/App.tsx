@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import "./styles/styles.scss";
 import { DataTypes } from "./DataTypes";
 import Planet from "./components/Planet";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 const App = () => {
   const [data, setData] = useState<DataTypes>();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +27,8 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Header />
-      {data && (
+      <Header open={open} setOpen={setOpen} />
+      {data && !open ? (
         <main>
           <Routes>
             {data.map((planet) => {
@@ -49,6 +51,8 @@ const App = () => {
             })}
           </Routes>
         </main>
+      ) : (
+        <HamburgerMenu setOpen={setOpen} />
       )}
     </BrowserRouter>
   );

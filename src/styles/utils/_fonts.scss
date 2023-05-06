@@ -2,6 +2,12 @@ $antonio-font: "Antonio", sans-serif;
 
 @font-face {
   font-weight: 400;
-  font-family: spartan;
+  font-family: SpartanRegular;
   src: url(/fonts/spartan/Spartan-Regular.ttf);
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: SpartanBold;
+  src: url(/fonts/spartan/Spartan-Bold.ttf);
 }
