@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SetStateAction, useState } from "react";
+import { SetStateAction } from "react";
 import useWindowDimensions from "../hooks/useWindowDimesions";
 
 type HeaderProps = {
